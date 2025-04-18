@@ -1,37 +1,37 @@
 export class ALXClass {
-    constructor(year, location) {
-        this._year = year;
-        this._location = location;
-    }
+  constructor(year, location) {
+    this._year = year;
+    this._location = location;
+  }
 
-    get year() {
-        return this._year;
-    }
+  get year() {
+    return this._year;
+  }
 
-    get location() {
-        return this._location;
-    }
+  get location() {
+    return this._location;
+  }
 }
 
 export class StudentALX {
-    constructor(firstName, lastName, alxClass) { // Added alxClass parameter
-        this._firstName = firstName;
-        this._lastName = lastName;
-        this._alxClass = alxClass;
-    }
+  constructor(firstName, lastName, alxClass) { // Added alxClass parameter
+    this._firstName = firstName;
+    this._lastName = lastName;
+    this._alxClass = alxClass;
+  }
 
-    get fullName() {
-        return `${this._firstName} ${this._lastName}`;
-    }
+  get fullName() {
+    return `${this._firstName} ${this._lastName}`;
+  }
 
-    get alxClass() {
-        return this._alxClass; // Corrected getter
-    }
+  get alxClass() {
+    return this._alxClass; // Corrected getter
+  }
 
-    get fullStudentDescription() {
-        // Corrected 'self' to 'this'
-        return `${this._firstName} ${this._lastName} - ${this._alxClass.year} - ${this._alxClass.location}`;
-    }
+  get fullStudentDescription() {
+    // Corrected 'self' to 'this'
+    return `${this._firstName} ${this._lastName} - ${this._alxClass.year} - ${this._alxClass.location}`;
+  }
 }
 
 // Instantiate classes after they are defined
