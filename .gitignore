@@ -1,5 +1,6 @@
-0x00-ES6_basic/*-main.js
+*-main.js
 node_modules/
 nodesource_setup.sh
 package-lock.json
-0x01-ES6_promise/*-main.js
+jest.config.js
+dist
