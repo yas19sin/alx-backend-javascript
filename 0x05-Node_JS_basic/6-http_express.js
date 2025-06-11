@@ -6,11 +6,9 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send('Hello ALX!');
+  res.status(200).send('Hello ALX!');
 });
 
-app.listen(1245, () => {
-  console.log('Server running at port 1245');
-});
+app.listen(1245);
 
 module.exports = app;

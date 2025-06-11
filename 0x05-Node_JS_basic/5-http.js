@@ -8,6 +8,11 @@ const fs = require('fs');
  */
 function countStudents(path) {
   return new Promise((resolve, reject) => {
+    if (!path) {
+      reject(new Error('Cannot load the database'));
+      return;
+    }
+
     fs.readFile(path, 'utf8', (err, data) => {
       if (err) {
         reject(new Error('Cannot load the database'));
@@ -67,15 +72,14 @@ const app = http.createServer(async (req, res) => {
       const studentInfo = await countStudents(databasePath);
       res.end(`This is the list of our students\n${studentInfo}`);
     } catch (error) {
-      res.end('This is the list of our students\nCannot load the database');
+      res.end(`This is the list of our students\n${error.message}`);
     }
   } else {
-    res.end('Hello ALX!');
+    res.statusCode = 404;
+    res.end('Not found');
   }
 });
 
-app.listen(1245, () => {
-  console.log('Server running at port 1245');
-});
+app.listen(1245);
 
 module.exports = app;

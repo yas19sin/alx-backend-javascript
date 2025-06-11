@@ -8,6 +8,11 @@ const fs = require('fs');
  */
 function countStudents(path) {
   return new Promise((resolve, reject) => {
+    if (!path) {
+      reject(new Error('Cannot load the database'));
+      return;
+    }
+
     fs.readFile(path, 'utf8', (err, data) => {
       if (err) {
         reject(new Error('Cannot load the database'));
@@ -58,21 +63,19 @@ function countStudents(path) {
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send('Hello ALX!');
+  res.status(200).send('Hello ALX!');
 });
 
 app.get('/students', async (req, res) => {
   const databasePath = process.argv[2];
   try {
     const studentInfo = await countStudents(databasePath);
-    res.send(`This is the list of our students\n${studentInfo}`);
+    res.status(200).send(`This is the list of our students\n${studentInfo}`);
   } catch (error) {
-    res.send('This is the list of our students\nCannot load the database');
+    res.status(500).send(`This is the list of our students\n${error.message}`);
   }
 });
 
-app.listen(1245, () => {
-  console.log('Server running at port 1245');
-});
+app.listen(1245);
 
 module.exports = app;
