@@ -1,15 +1,15 @@
-/**
- * Program that reads user input from stdin
- */
 process.stdout.write('Welcome to ALX, what is your name?\n');
 
-process.stdin.on('readable', () => {
-  const chunk = process.stdin.read();
-  if (chunk !== null) {
-    process.stdout.write(`Your name is: ${chunk.toString().trim()}\n`);
-  }
+let uname = '';
+
+process.stdin.on('data', (data) => {
+  uname = data.toString().trim();
+  process.stdout.write(`Your name is: ${uname}\n`);
 });
 
 process.stdin.on('end', () => {
+  if (!uname) {
+    process.stdout.write('Your name is: \n');
+  }
   process.stdout.write('This important software is now closing\n');
 });

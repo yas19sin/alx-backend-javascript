@@ -50,7 +50,11 @@ class StudentsController {
 
     readDatabase(databasePath)
       .then((students) => {
-        const studentList = students[major] || [];
+        if (!students[major]) {
+          response.status(200).send('List: ');
+          return;
+        }
+        const studentList = students[major];
         response.status(200).send(`List: ${studentList.join(', ')}`);
       })
       .catch(() => {

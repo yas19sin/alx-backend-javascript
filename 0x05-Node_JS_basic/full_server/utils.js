@@ -5,7 +5,7 @@ import fs from 'fs';
  * @param {string} filePath - Path to the CSV file
  * @returns {Promise<Object>} - Promise that resolves with student data organized by field
  */
-function readDatabase(filePath) {
+const readDatabase = (filePath) => {
   return new Promise((resolve, reject) => {
     if (!filePath) {
       reject(new Error('Cannot load the database'));

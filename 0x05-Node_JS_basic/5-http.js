@@ -61,8 +61,7 @@ function countStudents(path) {
  * Creates a more complex HTTP server
  */
 const app = http.createServer(async (req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
 
   if (req.url === '/') {
     res.end('Hello ALX!');

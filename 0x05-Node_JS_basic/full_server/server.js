@@ -10,6 +10,9 @@ const app = express();
 app.use('/', router);
 
 // Start the server
-app.listen(1245);
+const port = 1245;
+app.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
+});
 
 export default app;
