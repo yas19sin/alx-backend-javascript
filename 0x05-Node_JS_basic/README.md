@@ -44,21 +44,25 @@ This project contains various Node.js exercises focusing on basic concepts, file
 ## Usage
 
 To run the development server:
+
 ```bash
 npm run dev
 ```
 
 To run tests:
+
 ```bash
 npm run test
 ```
 
 To run linting:
+
 ```bash
 npm run check-lint
 ```
 
 To run full test suite:
+
 ```bash
 npm run full-test
 ```
