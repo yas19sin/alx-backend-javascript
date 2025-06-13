@@ -1,0 +1,20 @@
+{
+    "name": "task_0",
+    "version": "1.0.0",
+    "description": "",
+    "main": "0-calcul.js",
+    "scripts": {
+        "test": "./node_modules/mocha/bin/mocha",
+        "lint": "eslint . --ext .js"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "chai": "^5.2.0",
+        "eslint": "^8.57.1",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.31.0",
+        "mocha": "^6.2.3",
+        "sinon": "^20.0.0"
+    }
+}
