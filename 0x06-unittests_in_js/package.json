@@ -1,20 +1,18 @@
 {
-    "name": "task_0",
+    "name": "0x06-unittests_in_js",
     "version": "1.0.0",
-    "description": "",
-    "main": "0-calcul.js",
+    "description": "Project for learning unit testing in JavaScript",
+    "main": "",
     "scripts": {
-        "test": "./node_modules/mocha/bin/mocha",
-        "lint": "eslint . --ext .js"
+        "test": "./node_modules/mocha/bin/mocha"
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "chai": "^5.2.0",
+        "chai": "^4.3.7",
         "eslint": "^8.57.1",
-        "eslint-config-airbnb-base": "^15.0.0",
-        "eslint-plugin-import": "^2.31.0",
-        "mocha": "^6.2.3",
-        "sinon": "^20.0.0"
+        "eslint-plugin-mocha": "^10.5.0",
+        "mocha": "^10.2.0",
+        "sinon": "^15.0.1"
     }
 }

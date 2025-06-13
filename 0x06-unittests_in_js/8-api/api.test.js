@@ -1,18 +1,19 @@
 const request = require('request');
-const expect = require('chai').expect;
+const chai = require('chai');
+const expect = chai.expect;
 
-describe('Index page', () => {
-    const baseUrl = 'http://localhost:7865';
+describe('Index page', function () {
+    const url = 'http://localhost:7865';
 
-    it('should return status code 200', (done) => {
-        request.get(baseUrl, (error, response, body) => {
+    it('should return status code 200', function (done) {
+        request.get(url, function (error, response) {
             expect(response.statusCode).to.equal(200);
             done();
         });
     });
 
-    it('should return the correct message', (done) => {
-        request.get(baseUrl, (error, response, body) => {
+    it('should return the correct message', function (done) {
+        request.get(url, function (error, response, body) {
             expect(body).to.equal('Welcome to the payment system');
             done();
         });
